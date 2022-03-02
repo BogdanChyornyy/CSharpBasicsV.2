@@ -11,54 +11,62 @@ namespace lesson_1_enter
         static void Main(string[] args)
         {
 
-            //4.Создание чека.
+            //5*. Если пользователь указал месяц из зимнего периода, а средняя температура > 0, вывести сообщение «Дождливая зима».
 
-            string name_of_owner = "ИП Чёрный Б.К.";
-            string defolt = "Кассовый чек";
-            string IE = "ИП ЧЁРНЫЙ БОГДАН КОНСТАНТИНОВИЧ";
-            string cashier = "Иванов И.И.";
-            string location = "Калининградская обл. г. Калининград ул. Нарвская д. 12.";
-            string place = "Кофейня";
+            string[] month = { "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь" };
 
-            Console.WriteLine("Приветствуем вас в нашей кофейне!");
-            Console.WriteLine("Укажите номер напитка: ");
-            Console.WriteLine("1. Капучино 100р");
-            Console.WriteLine("2. Латте 100р");
-            Console.WriteLine("3. Эспрессо 80р");
-            string[] choice = { "Капучино", "Латте", "Эспрессо" };
+            Console.WriteLine("Введите порядковый номер месяца (от 1 до 12): ");
+            int indexmont = int.Parse(Console.ReadLine());
+                        
+            if (indexmont < 1 || indexmont > 12)
+            {
+                Console.WriteLine("Некорректный ввод данных!");
+                Console.WriteLine("Введите порядковый номер месяца: ");
+                indexmont = int.Parse(Console.ReadLine());
+                int realmonth = indexmont -= 1;
 
-            int coffee_number = int.Parse(Console.ReadLine());
-            int real_number = coffee_number -= 1;
 
-            int[] coffee_price = { 100, 100, 80 };
-            int coffee_price_numder = real_number;
+                float mintemp, maxtemp;
+                Console.WriteLine("Введите минимальную температуру за день ");
+                mintemp = float.Parse(Console.ReadLine());
+                Console.WriteLine("Введите максимальную температуру за день ");
+                maxtemp = float.Parse(Console.ReadLine());
+                float avertemp = (mintemp + maxtemp) / 2;
+                                
 
-            Console.WriteLine("Сколько чашек кофе вы желаете?");
-            int quontity_coffee = int.Parse(Console.ReadLine());
+                if ((indexmont == 0 || indexmont == 1 || indexmont == 11) && avertemp > 0)
+                {
+                    Console.WriteLine("Выбранный месяц - " + month[realmonth]);
+                    Console.WriteLine("Дождливая зима");
+                }
+                else
+                {
+                    Console.WriteLine("Выбранный месяц - " + month[realmonth]);
+                }
 
-            Console.WriteLine("Сколько пакетиков сахара вам положить?");
-            Console.WriteLine("Один пакетик сахара 5р.");
-            int sugar = int.Parse(Console.ReadLine());
-            int sugar_price = 5;
+            }
+            else
+            {
+                int realmonth = indexmont -= 1;
 
-            int type = real_number;
-            int total = sugar * sugar_price + quontity_coffee * coffee_price[coffee_price_numder];
+                float mintemp, maxtemp;
+                Console.WriteLine("Введите минимальную температуру за день ");
+                mintemp = float.Parse(Console.ReadLine());
+                Console.WriteLine("Введите максимальную температуру за день ");
+                maxtemp = float.Parse(Console.ReadLine());
+                float avertemp = (mintemp + maxtemp) / 2;
 
-            Console.WriteLine(name_of_owner);
-            Console.WriteLine(defolt);
-            Console.WriteLine(choice[type] + " *" + quontity_coffee + " =" + quontity_coffee * coffee_price[coffee_price_numder]);
-            Console.WriteLine("НДС не облагается");
-            Console.WriteLine("Сахар " + " *" + sugar + " =" + sugar * sugar_price);
-            Console.WriteLine("НДС не облагается");
-            Console.WriteLine("------------------------");
-            Console.WriteLine("ИТОГ " + " =" + total);
-            Console.WriteLine("------------------------");
-            Console.WriteLine("СУММА БЕЗ НДС " + " =" + total);
-            Console.WriteLine("Кассир " + cashier);
-            Console.WriteLine(IE);
-            Console.WriteLine(location);
-            Console.WriteLine("Место расчетов " + place);
-            Console.WriteLine("СПАСИБО ЗА ПОКУПКУ!");
+                if ((indexmont == 0 || indexmont == 1 || indexmont == 11) && avertemp > 0)
+                {
+                    Console.WriteLine("Выбранный месяц - " + month[realmonth]);
+                    Console.WriteLine("Дождливая зима");
+                }
+                else
+                {
+                    Console.WriteLine("Выбранный месяц - " + month[realmonth]);
+                }
+            }
+
         }
     }
 }
