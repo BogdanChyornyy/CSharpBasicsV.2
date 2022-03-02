@@ -11,23 +11,25 @@ namespace lesson_1_enter
         static void Main(string[] args)
         {
 
-            /* 1. Запросить у пользователя минимальную и максимальную температуру за сутки и вывести среднесуточную температуру. */
+            //2.Запросить у пользователя порядковый номер текущего месяца и вывести его название.
 
-            float mintemp, maxtemp;
+            string[] month = { "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь" };
 
-            Console.WriteLine("Сбор данных о среднесуточной температуре.");
-
-            Console.WriteLine("Введите минимальную температуру за день ");
-
-            mintemp = float.Parse(Console.ReadLine());
-
-            Console.WriteLine("Введите максимальную температуру за день ");
-
-            maxtemp = float.Parse(Console.ReadLine());
-
-            float avertemp = (mintemp + maxtemp) / 2;
-
-            Console.WriteLine("Среденесуточная температура: " + avertemp);
+            Console.WriteLine("Введите порядковый номер месяца (от 1 до 12): ");
+            int indexmont = int.Parse(Console.ReadLine());
+            if (indexmont < 1 || indexmont > 12)
+            {
+                Console.WriteLine("Некоректный ввод данных!");
+                Console.WriteLine("Введите порядековый номер месяца: ");
+                indexmont = int.Parse(Console.ReadLine());
+                int realmonth = indexmont -= 1;
+                Console.WriteLine(month[realmonth]);
+            }
+            else
+            {
+                int realmonth = indexmont -= 1;
+                Console.WriteLine(month[realmonth]);
+            }
 
         }
     }
