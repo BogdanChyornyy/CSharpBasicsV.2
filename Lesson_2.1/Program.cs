@@ -10,24 +10,29 @@ namespace lesson_1_enter
     {
         static void Main(string[] args)
         {
-            int[,] matrix = new int[5, 5];
-            int x = 0;
-
-            for (int i = 0; i < matrix.GetLength(0); i++)
+            string[,] directory = new string[5, 2];
+            string[] name = { "John", "Sarah", "Tony", "Nick", "Taylor"};
+            string[] number = { "89111111111", "89222222222", "89333333333", "89444444444", "89555555555"};
+            
+            for (int i = 0; i < 5; i++)
             {
-                for (int j = 0; j < matrix.GetLength(1); j++)
+                for (int j = 0; j < 2; j++) 
                 {
-                    if (i == x && j == x)
+                    if (j == 0) 
                     {
-                        x++;
-                        matrix[i, j] = 1;
-                        Console.Write($"{matrix[i, j]} ");
+                    directory[i, j] = name[i];
+                    System.Console.Write($"{directory[i, j]} ");
                     }
                     else
-                        System.Console.Write($"{matrix[i, j]} ");
+                    {
+                    directory[i, j] = number[i];
+                    System.Console.Write($"{directory[i, j]} ");
+                    }
+                    
                 }
                 System.Console.WriteLine();
             }
+
         }
     }
 }
