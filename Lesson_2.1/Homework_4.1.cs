@@ -26,7 +26,6 @@ namespace Homework_4_part_1
             Print("Thx:) You've got pretty name! Youre full name is: ");
             return lastName + " " + firstName + " " + patronymic;
         }
-
         static string Enter()
         {
             return Console.ReadLine();
@@ -40,6 +39,5 @@ namespace Homework_4_part_1
         {
             return Convert.ToString(Enter());
         }
-
     }
 }
