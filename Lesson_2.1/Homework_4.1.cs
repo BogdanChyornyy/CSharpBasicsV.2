@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Homeworks
+namespace Homework_4_part_1
 {
     class Program
     {
         static void Main()
-        {                        
-            string FLP = GetFullName();        
+        {
+            string FLP = GetFullName();
             Print(FLP);
         }
 
@@ -24,7 +24,7 @@ namespace Homeworks
             Print("Enter u're patronymic:");
             string patronymic = ReadString();
             Print("Thx:) You've got pretty name! Youre full name is: ");
-            return lastName + " " + firstName + " " + patronymic;            
+            return lastName + " " + firstName + " " + patronymic;
         }
 
         static string Enter()
@@ -42,6 +42,4 @@ namespace Homeworks
         }
 
     }
-
-
 }
