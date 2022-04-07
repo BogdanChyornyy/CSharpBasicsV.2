@@ -3,32 +3,38 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-namespace lesson_1_enter
+namespace Homework_4_part_1
 {
-    internal class Program
+    class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-
-            /* 1. Запросить у пользователя минимальную и максимальную температуру за сутки и вывести среднесуточную температуру. */
-
-            float mintemp, maxtemp;
-
-            Console.WriteLine("Сбор данных о среднесуточной температуре.");
-
-            Console.WriteLine("Введите минимальную температуру за день ");
-
-            mintemp = float.Parse(Console.ReadLine());
-
-            Console.WriteLine("Введите максимальную температуру за день ");
-
-            maxtemp = float.Parse(Console.ReadLine());
-
-            float avertemp = (mintemp + maxtemp) / 2;
-
-            Console.WriteLine("Среденесуточная температура: " + avertemp);
-
+            string FLP = GetFullName();
+            Print(FLP);
+        }
+        static string GetFullName()
+        {
+            Print("Hi! Enter your personal data, please:)");
+            Print("Enter u're first name:");
+            string firstName = ReadString();
+            Print("Enter u're last name:");
+            string lastName = ReadString();
+            Print("Enter u're patronymic:");
+            string patronymic = ReadString();
+            Print("Thx:) You've got pretty name! Youre full name is: ");
+            return lastName + " " + firstName + " " + patronymic;
+        }
+        static string Enter()
+        {
+            return Console.ReadLine();
+        }        
+        static void Print(string words)
+        {
+            Console.WriteLine(words);
+        }
+        static string ReadString()
+        {
+            return Convert.ToString(Enter());
         }
     }
 }
